@@ -9,11 +9,11 @@
   position: relative
   padding-top: 20px
   display: flex
-  width: 300px
+  width: 450px
   &__circle
    position: fixed
    z-index: 1
-   rect 
+   rect
     transition-duration: .4s
     transition-timing-function: cubic-bezier(.25,.74,.22,.99)
     transition-property: stroke-dashoffset
@@ -24,33 +24,35 @@
     stroke-dashoffset: 1
     opacity: .15
     transform-origin: 50% 50%
-    width: calc(33% - 2px)
-    height: calc(36% - 2px)
+    width: calc(70% - 2px)
+    height: calc(64% - 2px)
    rect+rect 
     stroke:  #dd2626
     opacity: 1
     stroke-width: .75   
   &__left
+   font-family: Arial, Helvetica, sans-serif 
    position: fixed
-   font-size: 150px
+   font-size: 200px
    color: #dd2626
    margin: 0
   &__right
+   font-family: Arial, Helvetica, sans-serif
    position: fixed
-   padding-left: 150px
+   padding-left: 220px
    &__list
     transform: translateY(0px)
     transition: all 0.8s ease 0s 
    &__item
     transition: all 0.8s ease 0s 
     position: relative
-    font-size: 150px
+    font-size: 200px
     color: #394854
     margin: 0
     opacity: 0.05
  &__action
   &__item
-   padding: 100px 0 100px 0 
+   padding: 120px 0 100px 0 
   &__item:after
    display: block
    position: relative

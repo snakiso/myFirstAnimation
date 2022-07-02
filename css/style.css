@@ -18,7 +18,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 300px;
+  width: 450px;
 }
 .history__date__circle {
   position: fixed;
@@ -39,8 +39,8 @@
   opacity: 0.15;
   -webkit-transform-origin: 50% 50%;
           transform-origin: 50% 50%;
-  width: calc(33% - 2px);
-  height: calc(36% - 2px);
+  width: calc(70% - 2px);
+  height: calc(64% - 2px);
 }
 .history__date__circle rect + rect {
   stroke: #dd2626;
@@ -48,14 +48,16 @@
   stroke-width: 0.75;
 }
 .history__date__left {
+  font-family: Arial, Helvetica, sans-serif;
   position: fixed;
-  font-size: 150px;
+  font-size: 200px;
   color: #dd2626;
   margin: 0;
 }
 .history__date__right {
+  font-family: Arial, Helvetica, sans-serif;
   position: fixed;
-  padding-left: 150px;
+  padding-left: 220px;
 }
 .history__date__right__list {
   -webkit-transform: translateY(0px);
@@ -67,13 +69,13 @@
   -webkit-transition: all 0.8s ease 0s;
   transition: all 0.8s ease 0s;
   position: relative;
-  font-size: 150px;
+  font-size: 200px;
   color: #394854;
   margin: 0;
   opacity: 0.05;
 }
 .history__action__item {
-  padding: 100px 0 100px 0;
+  padding: 120px 0 100px 0;
 }
 .history__action__item:after {
   display: block;

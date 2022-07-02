@@ -2,7 +2,7 @@ let date = document.querySelectorAll('.history__date__right__item')
 console.log(date)
 let list = document.querySelector('.history__date__right__list')
 let progress = document.querySelector('.history__date__progress')
-
+const isActive = 'is-active'
 function progressBar() {
  let scroll = document.body.scrollTop || document.documentElement.scrollTop;
  let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -13,58 +13,55 @@ function progressBar() {
 }
 window.addEventListener('scroll', progressBar);
 
+function debounce(func, timeout = 300) {
+  let timer;
+  return (...args) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => { func.apply(this, args); }, timeout);
+  };
+}
+function changeClass(first, second, third){
+  first.classList.remove(isActive)
+  second.classList.add(isActive)
+  third.classList.remove(isActive)
+}
+
 window.addEventListener('scroll', function(){
   console.log (this.window.pageYOffset)
  if (this.window.pageYOffset < 100 ){
   list.style.transform = 'translateY(0px)'
-  date[0].classList.add('is-active')
-  date[1].classList.remove('is-active')
+   changeClass(date[1], date[0], date[2])
  }
- if (this.window.pageYOffset > 100){
-   list.style.transform = 'translateY(-172px)'
-   date[0].classList.remove('is-active')
-   date[1].classList.add('is-active')
-   date[2].classList.remove('is-active')
+  if (this.window.pageYOffset >= 100 ){
+   list.style.transform = 'translateY(-230px)'
+   changeClass(date[0],date[1],date[2])
  } 
-  if (this.window.pageYOffset > 770){
-   list.style.transform = 'translateY(-344px)'
-    date[1].classList.remove('is-active')
-    date[2].classList.add('is-active') 
-    date[3].classList.remove('is-active')
+  if (this.window.pageYOffset >= 800 ){
+   list.style.transform = 'translateY(-460px)'
+    changeClass(date[1], date[2], date[3])
  }
- if (this.window.pageYOffset > 1400) {
-  list.style.transform = 'translateY(-516px)'
-   date[2].classList.remove('is-active')
-   date[3].classList.add('is-active')
-   date[4].classList.remove('is-active')
+  if (this.window.pageYOffset >= 1500 ) {
+  list.style.transform = 'translateY(-690px)'
+   changeClass(date[2], date[3], date[4])
  }
- if (this.window.pageYOffset > 2070) {
-  list.style.transform = 'translateY(-688px)'
-   date[3].classList.remove('is-active')
-   date[4].classList.add('is-active')
-   date[5].classList.remove('is-active')
+  if (this.window.pageYOffset >= 2200) {
+  list.style.transform = 'translateY(-920px)'
+   changeClass(date[3], date[4], date[5])
  }
- if (this.window.pageYOffset > 3160) {
-  list.style.transform = 'translateY(-860px)'
-   date[4].classList.remove('is-active')
-   date[5].classList.add('is-active')
-   date[6].classList.remove('is-active')
+  if (this.window.pageYOffset > 3440 ) {
+  list.style.transform = 'translateY(-1150px)'
+   changeClass(date[4], date[5], date[6])
  }
- if (this.window.pageYOffset > 4690) {
-  list.style.transform = 'translateY(-1032px)'
-   date[5].classList.remove('is-active')
-   date[6].classList.add('is-active')
-   date[7].classList.remove('is-active')
+  if (this.window.pageYOffset > 5100  ) {
+  list.style.transform = 'translateY(-1380px)'
+   changeClass(date[5], date[6], date[7])
  }
- if (this.window.pageYOffset > 5361) {
-  list.style.transform = 'translateY(-1204px)'
-   date[6].classList.remove('is-active')
-   date[7].classList.add('is-active')
-   date[8].classList.remove('is-active')
+if (this.window.pageYOffset > 5810 ) {
+  list.style.transform = 'translateY(-1610px)'
+   changeClass(date[6], date[7], date[8])
  }
- if (this.window.pageYOffset > 6450) {
-  list.style.transform = 'translateY(-1376px)'
-   date[7].classList.remove('is-active')
-   date[8].classList.add('is-active')
+if (this.window.pageYOffset > 7000 ) {
+  list.style.transform = 'translateY(-1840px)'
+   changeClass(date[7], date[8], date[7])
  }
 })
